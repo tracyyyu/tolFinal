@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang=“en”>
+    <head>
+        <meta charset=“”UTF-8>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+      </head>
+    <body>
+        <div>
+          <img src="logo.png" alt="logo" id="logo">
+        </div>
+        <div id="pyramid">
+          <!-- <H1>Let’s Tell a Compelling Story</H1> -->
+          <button type="submit" id="openBtn">Preview My Story</button>
+          <button id="onboarding">i</button>
+          <div id="bgdiv">
+            <img src="bg.png" alt="backgroundImage" id="bg">
+          </div>
+          <div id="allboxes">
+            <!-- Setting -->
+            <div class="textbox" id="setting">
+              <div class="number">
+              <div class="circle">1</div>
+              <h2>Setting</h2>
+            </div>
+            <form id="inputFormSetting">
+              <textarea oninput="displayInput()" id="userInput1" rows="6" cols="50"></textarea>
+            </form>
+            </div>
+            <!-- Rising Action -->
+            <div class="textbox" id="risingAction">
+              <div class="number">
+                <div class="circle">2</div>
+                <h2>Rising Action</h2>
+              </div>
+              <textarea oninput="displayInput()" id="userInput2" rows="6" cols="50"></textarea>
+            </div>
+            <!-- Climax -->
+            <div class="textbox" id="climax">
+              <div class="number">
+                <div class="circle">3</div>
+                <h2>Climax</h2>
+              </div>
+              <textarea oninput="displayInput()" id="userInput3" rows="6" cols="50"></textarea>
+            </div>
+            <!-- Falling Action -->   
+            <div class="textbox" id="fallingAction">
+              <div class="number">
+                <div class="circle">4</div>
+                <h2>Falling Action</h2>
+              </div>
+              <textarea oninput="displayInput()" id="userInput4" rows="6" cols="50"></textarea>
+            </div>
+            <!-- Resolution -->  
+            <div class="textbox" id="resolution">
+              <div class="number">
+                <div class="circle">5</div>
+                <h2>Resolution</h2>
+              </div>
+              <textarea oninput="displayInput()" id="userInput5" rows="6" cols="50"></textarea>
+            </div>
+          </div>
+        </div>
+        <!-- Trees -->   
+        <div id="treeGreen">
+          <img src="treegreen.png" alt="treegreen" id="treeGreenImage">
+        </div>
+        <div id="treeBlue">
+          <img src="treeblue.png" alt="treeblue" id="treeBlueImage">
+        </div>
+         <!-- Sun -->   
+        <div id="sun">
+          <img src="sun.png" alt="treegreen" id="sunImage">
+        </div>
+        <!-- Bubble --> 
+        <div id="bubble">
+          <img src="bubble.png" alt="instruction_bubble" id="bubbleImage">
+        </div>
+        <!-- Window -->  
+        <div id="floatingWindow" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h1>My Story</h1>
+            <p id="displayArea1"> Oops you haven't written anything yet! Ask your StoryMate for help. </p>
+            <!-- <h2>Rising Action</h2> -->
+            <p id="displayArea2">  </p>
+            <!-- <h2>Climax</h2> -->
+            <p id="displayArea3"> </p>
+            <!-- <h2>Falling Action</h2> -->
+            <p id="displayArea4"> </p>
+            <!-- <h2>Resolution</h2> -->
+            <p id="displayArea5"> </p>
+            <button id="exportBtn" onclick="exportToPDF()">Export to PDF</button>
+            <button id="genAIBtn"><img src="ai.svg" id="aiIcon">Illustrate My Story</button>
+          </div>
+        </div>
+         <!-- Onboarding Window -->  
+         <div id="onboardingWindow" class="modal">
+          <div id="onboardingWindowContent" class="modal-content">
+            <span class="close">&times;</span>
+            <div id="content1" class="content" >
+              <h1>Step 1</h1>
+              <p>Start the course by talking to your StoryMate on the left bottom corner. It will guide you through the Pyramid step by step</p>
+              <div>
+                <img src="ob1.png" id="step1">
+              </div>
+            </div>
+
+            <div id="content2" class="content" style="display:none;">
+              <h1>Step 2</h1>
+              <p>Once you are done with a section, you will be prompted to copy and paste it into the corresponding textbox</p>
+              <div>
+                <img src="ob2.png" id="step2">
+              </div>
+            </div>
+
+            <div id="content3" class="content" style="display:none;">
+              <h1>Step 3</h1>
+              <p>When you finished all the steps, preview and export your story as a PDF. Share it with your friends!</p>
+              <div>
+                <img src="ob3.png" id="step3">
+              </div>
+            </div>
+
+            <button onclick="next()" id="nextBtn">Next</button>
+          </div>
+        </div>
+      
+        
+
+
+
+        <script type="text/javascript">
+              (function(d, t) {
+                  var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                  v.onload = function() {
+                    window.voiceflow.chat.load({
+                      verify: { projectID: '65d62262d11ad93cf08bf351' },
+                      url: 'https://general-runtime.voiceflow.com',
+                      versionID: 'production'
+                    });
+                  }
+                  v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+              })(document, 'script');
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>
